@@ -5,7 +5,7 @@ Let an AI do it for you!
 Just run `python -m debugAIr <your_script.py>` and let debugAIr do the rest!
 
 Absolutely no warranty, use at your own risk.
-The following, definitely not cherry-picked example took just 5 seconds to run!
+The following, definitely not cherry-picked example took just 5 seconds to run! Can you find the fix faster than ChatGPT? 🤓
 
 ``` py
 (venv) janpf@mbp ~/p/S/s/evaluation (main)> python -m debugAIr broken_script.py
