@@ -74,6 +74,7 @@ if __name__ == "__main__":
         # logger.debug(chat_completion)
         next_action = chat_completion.choices[0].message.content
         next_action = next_action.replace("`", "")  # it just likes to add those
+        # TODO if very first action is "w(here)", replace it with "l(ist)" instead, as chatgpt mixes them up
         if not "!solution" in next_action:
             next_action = next_action.split("\n")[0]  # only take the first expression
         logger.info(next_action)

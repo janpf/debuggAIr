@@ -1,14 +1,13 @@
-# debugAIr - Your AI-Powered Debugging Companion 🤖
+# debuggAir - Your AI-Powered Debugging Companion 🤖
 
 Tired of debugging your code?
 Let an AI do it for you!
-Just run `python -m debugAIr <your_script.py>` and let debugAIr do the rest!
+Just run `python -m debuggAir <your_script.py>` and let debuggAir do the rest!
 
-Absolutely no warranty, use at your own risk.
 The following, definitely not cherry-picked example took just 5 seconds to run! Can you find the fix faster than ChatGPT? 🤓
 
 ``` py
-(venv) janpf@mbp ~/p/S/s/evaluation (main)> python -m debugAIr broken_script.py
+(venv) janpf@mbp ~/p/S/s/evaluation (main)> python -m debuggAir broken_script.py
 2023-12-15 01:08:49.770 | INFO     | __main__:<module>:69 -
 Traceback (most recent call last): File ".../Python.framework/Versions/3.10/lib/python3.10/pdb.py", line 1723, in main
     pdb._runscript(mainpyfile)
@@ -64,3 +63,5 @@ Post mortem debugger finished. The /Users/janpf/.../src/evaluation/tester.py wil
 The issue is that in the eval_results dictionary, there is no key called 'predict_overall_acc', but there is a key named 'predict_overall_accuracy'. To fix this issue, you need to change 'predict_overall_acc' to 'predict_overall_accuracy'.
 2023-12-15 01:08:54.602 | SUCCESS  | __main__:<module>:86 - Solution found
 ```
+
+Absolutely no warranty, use at your own risk.
