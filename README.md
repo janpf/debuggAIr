@@ -64,4 +64,53 @@ The issue is that in the eval_results dictionary, there is no key called 'predic
 2023-12-15 01:08:54.602 | SUCCESS  | __main__:<module>:86 - Solution found
 ```
 
+It now also works for java!
+
+``` java
+(venv) janpf@whackintosh ~/p/d/java_test (master)> python3 ../jebuggAIr.py IAmBroken
+2023-12-17 00:25:08.208 | INFO     | __main__:<module>:66 - Initializing jdb ...
+> run IAmBroken
+Set uncaught java.lang.Throwable
+Set deferred uncaught java.lang.Throwable
+>
+VM Started: Fill that Pokedex! Got to catch'em all!
+
+Exception occurred: IAmBroken$Pikachu (uncaught)"thread=main", IAmBroken.main(), line=24 bci=142
+24                      throw new Pikachu("Donnerblitz");
+
+main[1] list
+20                          System.out.println("Cleaned up!");
+21              }
+22              catch (RuntimeException e) {
+23                      System.out.println("Fill that Pokedex! Got to catch'em all!");
+24 =>                   throw new Pikachu("Donnerblitz");
+25              }
+26      }
+27
+28      static class Pikachu extends RuntimeException {
+29
+main[1] list 20, 30
+16                                  if (entry.getValue().equals("Ohrangschensaft")) {
+17                                      map.remove(entry.getKey());
+18                              }
+19                      }
+20                      System.out.println("Cleaned up!");
+21              }
+22              catch (RuntimeException e) {
+23                      System.out.println("Fill that Pokedex! Got to catch'em all!");
+24 =>                   throw new Pikachu("Donnerblitz");
+25              }
+main[1] print e.getMessage()
+e.getMessage() = null
+main[1] print map.entrySet()
+com.sun.tools.example.debug.expr.ParseException: Name unknown: map.entrySet
+map.entrySet() = null
+main[1]
+
+!solution
+
+The issue is that an exception is being thrown when trying to remove an entry from a map during iteration. This causes a ConcurrentModificationException, which is a RuntimeException, to be thrown. The solution is to use an iterator to remove the entry instead of trying to remove it directly.
+2023-12-17 00:25:12.155 | SUCCESS  | __main__:<module>:83 - Solution found
+```
+
 Absolutely no warranty, use at your own risk.
